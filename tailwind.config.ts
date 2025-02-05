@@ -18,7 +18,7 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), daisyui],
+  plugins: [require("@tailwindcss/typography"), require("daisyui"), require("@designbycode/tailwindcss-text-stroke"),],
   daisyui: {
     themes: [
       {

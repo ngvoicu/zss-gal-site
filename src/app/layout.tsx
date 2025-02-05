@@ -4,6 +4,7 @@ import "./globals.css";
 import banner from "../../public/helper/banner-gal.jpg"
 import Image from "next/image";
 import Head from "next/head";
+import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '700'],
@@ -28,10 +29,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body className={`${roboto.className} min-h-screen flex flex-col`}>
-        <div className="flex flex-col container mx-auto px-4">
+        <div className="flex flex-col flex-grow container mx-auto px-4">
           <Image src={banner} alt="banner gal" width={1280} height={300} />
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
