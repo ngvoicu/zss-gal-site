@@ -1,42 +1,44 @@
-import heroBackground from "../../../public/helper/juyt_6_copy.jpg"
 import newLogo from "../../../public/helper/gal-logo-new.jpg"
 import Image from "next/image";
 import Link from "next/link";
+import heroBackground from "../../../public/helper/IMG_20200920_125334-small.jpg"
 
-export default function Footer() {
+
+export default function Header() {
     return (
         <div>
-            <div className="hero" style={{ backgroundImage: `url(${heroBackground.src})`, backgroundSize: "cover" }} >
-                <div className="text-center mt-11 mb-11">
-                    <div>
-                        <h1 className="mb-9 mt-5 text-7xl font-bold text-white text-stroke-1 text-stroke-indigo-200">L E A D E R</h1>
-                        <p className="py-6 text-white text-stroke-1 text-stroke-indigo-100">
-                            DEZVOLTAREA LOCALĂ PLASATĂ SUB RESPONSABILITATEA COMUNITĂTII
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className="navbar bg-base-100">
+            <div className="container navbar bg-base-100 relative z-20"> {/* Ensures navbar has correct stacking context */}
                 <div className="navbar-start">
-                    <Link className="text-sky-600 hover:text-sky-400" href="/acasa"><Image src={newLogo} alt="gal logo" width={250} height={139} /></Link>
+                    <Link className="text-sky-600 hover:text-sky-400" href="/acasa">
+                        <Image src={newLogo} alt="gal logo" width={250} height={139} />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
+                </div>
+                <div className="navbar-end">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
                         <li>
                             <details>
-                                <summary>Parent</summary>
+                                <summary>GAL</summary>
+                                <ul className="p-2">
+                                    <li><Link href="/acasa">Structura organizatorica</Link></li>
+                                    <li><a>Comisia de selectie a proiectelor</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary>Teritoriul Microregiunii</summary>
                                 <ul className="p-2">
                                     <li><a>Submenu 1</a></li>
                                     <li><a>Submenu 2</a></li>
                                 </ul>
                             </details>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <li><a>Strategia de dezvoltare locala</a></li>
+                        <li><a>Interventii FEADR</a></li>
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
+                    <div className="dropdown dropdown-end relative"> {/* Make dropdown container relative */}
                         <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ export default function Footer() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow absolute"> {/* Set absolute position and higher z-index */}
                             <li><a>Item 1</a></li>
                             <li>
                                 <a>Parent</a>
@@ -66,6 +68,16 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className="relative w-full">
+                <Image
+                    src={heroBackground}
+                    alt="Hero background"
+                    layout="intrinsic"
+                    width={2000}
+                    height={800}
+                    className="w-full h-auto"
+                />
             </div>
         </div>
     );
