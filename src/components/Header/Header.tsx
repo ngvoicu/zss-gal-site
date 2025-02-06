@@ -2,7 +2,7 @@ import newLogo from "../../../public/helper/gal-logo-new.jpg"
 import Image from "next/image";
 import Link from "next/link";
 import heroBackground from "../../../public/helper/IMG_20200920_125334-small.jpg"
-
+import caretDown from "../../../public/helper/caret-down.svg"
 
 export default function Header() {
     return (
@@ -14,32 +14,50 @@ export default function Header() {
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                </div>
-                <div className="navbar-end">
                     <ul className="menu menu-horizontal px-1">
-                        <li>
-                            <details>
-                                <summary>GAL</summary>
-                                <ul className="p-2">
-                                    <li><Link href="/acasa">Structura organizatorica</Link></li>
-                                    <li><a>Comisia de selectie a proiectelor</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details>
-                                <summary>Teritoriul Microregiunii</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Strategia de dezvoltare locala</a></li>
-                        <li><a>Interventii FEADR</a></li>
+                        <div className="m-1 flex"><Link href="/acasa">Acasa</Link></div>
+                        <div className="dropdown dropdown-hover">
+                            <div tabIndex={0} className=" m-1 flex">GAL<Image alt="down" width={16} height={16} src={caretDown} /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                <li><Link href="/acasa">Structura organizatorica</Link></li>
+                                <li><Link href="/acasa">Comisia de selectie a proiectelor</Link></li>
+                            </ul>
+                        </div>
+                        <div className="dropdown dropdown-hover">
+                            <div tabIndex={0} className=" m-1 flex">Teritoriul Microregiunii<Image alt="down" width={16} height={16} src={caretDown} /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                <li><Link href="/acasa">Submenu 1</Link></li>
+                                <li><Link href="/acasa">Submenu 2</Link></li>
+                            </ul>
+                        </div>
+                        <div className="m-1 flex"><Link href="/acasa">Strategia de dezvoltare locala</Link></div>
+                        <div className="dropdown dropdown-hover">
+                            <div tabIndex={0} className=" m-1 flex">Interventii FEADR<Image alt="down" width={16} height={16} src={caretDown} /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                <li><Link href="/acasa">Submenu 1</Link></li>
+                                <li><Link href="/acasa">Submenu 2</Link></li>
+                            </ul>
+                        </div>
+                        <div className="dropdown dropdown-hover">
+                            <div tabIndex={0} className=" m-1 flex">Interventii FSE+<Image alt="down" width={16} height={16} src={caretDown} /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                <li><Link href="/acasa">Submenu 1</Link></li>
+                                <li><Link href="/acasa">Submenu 2</Link></li>
+                            </ul>
+                        </div>
+                        <div className="dropdown dropdown-hover">
+                            <div tabIndex={0} className=" m-1 flex">Finantare proiecte<Image alt="down" width={16} height={16} src={caretDown} /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                <li><Link href="/acasa">Submenu 1</Link></li>
+                                <li><Link href="/acasa">Submenu 2</Link></li>
+                            </ul>
+                        </div>
+                        <div className="m-1 flex"><Link href="/contact">Contact</Link></div>
                     </ul>
+                </div>
+                <div className="navbar-end lg:hidden lg:w-0">
                     <div className="dropdown dropdown-end relative"> {/* Make dropdown container relative */}
-                        <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -53,18 +71,45 @@ export default function Header() {
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow absolute"> {/* Set absolute position and higher z-index */}
-                            <li><a>Item 1</a></li>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow absolute"> {/* Set absolute position and higher z-index */}
+                            <li><Link href="/acasa">Acasa</Link></li>
                             <li>
-                                <a>Parent</a>
+                                <span className="menu-title">GAL</span>
                                 <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
+                                    <li><Link href="/acasa">Structura organizatorica</Link></li>
+                                    <li><Link href="/acasa">Comisia de selectie a proiectelor</Link></li>
                                 </ul>
                             </li>
-                            <li><a>Item 3</a></li>
+                            <li>
+                                <span className="menu-title">Teritoriul Microregiunii</span>
+                                <ul className="p-2">
+                                    <li><Link href="/acasa">Submenu 1</Link></li>
+                                    <li><Link href="/acasa">Submenu 2</Link></li>
+                                </ul>
+                            </li>
+                            <li><Link href="/acasa">Strategia de dezvoltare locala</Link></li>
+                            <li>
+                                <span className="menu-title">Interventii FEADR</span>
+                                <ul className="p-2">
+                                    <li><Link href="/acasa">Submenu 1</Link></li>
+                                    <li><Link href="/acasa">Submenu 2</Link></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span className="menu-title">Interventii FSE+</span>
+                                <ul className="p-2">
+                                    <li><Link href="/acasa">Submenu 1</Link></li>
+                                    <li><Link href="/acasa">Submenu 2</Link></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span className="menu-title">Finantare proiecte</span>
+                                <ul className="p-2">
+                                    <li><Link href="/acasa">Submenu 1</Link></li>
+                                    <li><Link href="/acasa">Submenu 2</Link></li>
+                                </ul>
+                            </li>
+                            <li><Link href="/contact">Contact</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -79,6 +124,6 @@ export default function Header() {
                     className="w-full h-auto"
                 />
             </div>
-        </div>
+        </div >
     );
 }
